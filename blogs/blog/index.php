@@ -33,18 +33,34 @@
     </nav>
 
     <div class="container mt-5">
-        <div class="row">
-            <h1>Title</h1>
+        <?php
+
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+            require('../../conn.php');
+            $query = "SELECT * FROM blogs WHERE id={$id}";
+            $result = $conn->query($query);
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+
+                echo '<div class="row">
+            <h1>' . $row["title"] . '</h1>
         </div>
         <div class="row">
             <div class="col-10"></div>
             <div class="col-2">
-                <span id="date"><i>December 4, 2021</i></span>
+                <span id="date"><i>' . $row["timestamp"] . '</i></span>
             </div>
         </div>
         <div class="row my-5">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi id dicta est nostrum ut, quis voluptates odio veritatis inventore optio! Blanditiis nesciunt, voluptate illum cumque iste totam quis officia placeat itaque sapiente iure pariatur. Totam natus delectus, architecto asperiores quibusdam reiciendis nam vero repudiandae illum. Obcaecati totam facere commodi facilis!</p>
-        </div>
+            <p>' . $row["long_description"] . '</p>
+        </div>';
+            }
+        }
+
+
+        ?>
+
     </div>
 
 

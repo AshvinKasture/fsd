@@ -43,7 +43,7 @@ const fetchBlogs = (startCounter) => {
             year: 'numeric',
           });
           let blogCol = `<div class="col my-3" id="blog_${blogItem.id}">
-                <a href="./blog?id=${blogItem.no}" class="card-link">
+                <a href="./blog?id=${blogItem.id}" class="card-link">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title blog-title">${blogItem.title}</h5>
