@@ -1,0 +1,31 @@
+<?php
+
+                    require('../conn.php');
+                    $query = "SELECT * FROM blogs ORDER BY timestamp DESC LIMIT 0, 32;";
+                    $result = $conn->query($query);
+                    if ($result->num_rows > 0) {
+                        $rowCounter = 0;
+                        while ($row = $result->fetch_assoc()) {
+                            $no = $row["no"];
+                            $title = $row["title"];
+                            $short_description = $row["short_description"];
+
+
+                            echo '<div class="col my-3">
+                <a href="./blog?id=' . $no . '" class="card-link">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title blog-title">' . $title . '</h5>
+
+                            <h6 class="card-subtitle mb-2 text-muted">December 4, 2021</h6>
+                            <p class="card-text">' . $short_description . '</p>
+                            <!-- <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a> -->
+                        </div>
+                    </div>
+                </a>
+            </div>';
+                        }
+                    }
+
+                    ?>

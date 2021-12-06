@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav">
+      <span class="nav-name">Ashvin Kasture</span>
+      <ul>
+        <li class="blogs-link"><a href="./blogs/">Blogs</a></li>
+        <li class="skills-link">Skills</li>
+        <li class="about-link active-link">About Me</li>
+      </ul>
+    </div>
+    <div class="main-content" id="about">
+      <div class="photo-area">
+        <img src="ashvin-picture.jpeg" class="profile-picture" />
+      </div>
+      <div class="text-area">
+        <h1 id="typer"></h1>
+      </div>
+    </div>
+    <div class="skill-content">
+        
+      <h1 class="skills-title" id="skills">My Skills</h1>
+      <div class="all-skills">
+        <div class="languages skill-column">
+            <h2 class="language-title skill-title">Languages</h3>
+            <ul class="language-list skill-list">
+                <li class="language-item skill-item">
+                    <img src="logos/python.png" width="50px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="90" max="100" class="python-meter skill-meter"></meter>
+                </li>
+                <li class="language-item skill-item">
+                    <img src="logos/javascript.png" width="50px" height="50px" />
+                    <meter value="80" max="100" class="javascript-meter skill-meter"></meter>
+                </li>
+                <li class="language-item skill-item">
+                    <img src="logos/java.png" width="50px" height="50px" />
+                    <meter value="75" max="100" class="java-meter skill-meter"></meter>
+                </li>
+                <li class="language-item skill-item">
+                    <img src="logos/cpp.png" width="50px" height="50px" />
+                    <meter value="50" max="100" class="cpp-meter skill-meter"></meter>
+                </li>
+            </ul>
+        </div>
+        <div class="frameworks skill-column">
+            <h2 class="framwwork-title skill-title">Frameworks</h2>
+            <ul class="framwwork-list skill-list">
+                <li class="framework-item skill-item"><img src="logos/mern.png" width="100px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="70" max="100" class="mern-meter skill-meter"></meter>
+                </li>
+                <li class="framework-item skill-item"><img src="logos/flutter.png" width="100px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="85" max="100" class="flutter-meter skill-meter"></meter>
+                </li>
+                <li class="framework-item skill-item"><img src="logos/electron.png" width="50px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="85" max="100" class="electron-meter skill-meter"></meter>
+                </li>
+                <li class="framework-item skill-item"><img src="logos/django.png" width="50px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="50" max="100" class="django-meter skill-meter"></meter>
+                </li>
+            </ul>
+        </div>
+        <div class="databases skill-column">
+            <h2 class="database-title skill-title">Databases</h3>
+                <ul class="database-list skill-list">
+                <li class="database-item skill-item"><img src="logos/mysql.png" width="50px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="90" max="100" class="mysql-meter skill-meter"></meter></li>
+                <li class="database-item skill-item"><img src="logos/postgres.png" width="50px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="60" max="100" class="postgres-meter skill-meter"></meter></li>
+                <li class="database-item skill-item"><img src="logos/mongo.png" width="100px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="75" max="100" class="mongo-meter skill-meter"></meter></li>
+                <li class="database-item skill-item"><img src="logos/sqlite.png" width="100px" height="50px" />
+                    <!-- <div class="python">&nbsp;</div> -->
+                    <meter value="90" max="100" class="sqlite-meter skill-meter"></meter></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

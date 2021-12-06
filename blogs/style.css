@@ -1,0 +1,17 @@
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  color: inherit;
+}
+
+#date {
+}
+
+.spinner-border {
+  margin-left: 49%;
+
+  /* display: none; */
+}
