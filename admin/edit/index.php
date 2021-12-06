@@ -41,24 +41,49 @@ if (!isset($_SESSION["isLoggedIn"]) || !$_SESSION["isLoggedIn"]) {
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Blogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-danger" href="./logout.php" role="button">Logout</a>
-                    </li>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <a class="btn btn-success" href="./new/" role="button">New Blog</a>
-        <div class="row my-5" id="blog-row">
+    <?php
 
-        </div>
-    </div>
-    <div class="container" id="spinner-container">
-        <div class="spinner-border" role="status">
-            <span class="sr-only"></span>
-        </div>
-    </div>
+
+    require('../../conn.php');
+
+    $query = "SELECT * FROM blogs WHERE id='{$_GET['id']}'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+
+
+        echo '<div class="container mt-5">
+        <form action="./edit.php" method="POST">
+        <input type="hidden" name="id" value="' . $row["id"] . '">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="' . $row["title"] . '">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Short Description</label>
+                <input type="text" class="form-control" id="short" name="short" value="' . $row["short_description"] . '">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Long Description</label>
+                <!-- <input type="text" class="form-control" id="title"> -->
+                <textarea class="form-control" name="long" id="long" cols="30" rows="10">' . $row["long_description"] . '</textarea>
+            </div>
+
+            <button name="submit" type="submit" class="btn btn-success">Save</button>
+            <button name="cancel" type="submit" class="btn btn-danger">Cancel</button>
+        </form>
+    </div>';
+    } else {
+        echo $query;
+        // header("Location: ../");
+    }
+
+    ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
